@@ -8,5 +8,10 @@ export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
 export const ADD_SHOP = "ADD_SHOP";
 export const FETCH_SHOPS = "FETCH_SHOPS";
 
+// Cart Types
+export const ADD_ITEM = "ADD_ITEM";
+export const DELETE_ITEM = "DELETE_ITEM";
+export const CHECKOUT = "CHECKOUT";
+
 // User Types
 export const SET_USER = "SET_USER";
