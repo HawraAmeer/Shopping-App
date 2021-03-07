@@ -7,6 +7,8 @@ import ShopDetail from "../ShopDetail";
 import ProductDetail from "../ProductDetail";
 import CartList from "../CartList";
 import CartButton from "../buttons/CartButton";
+import Signin from "../authentication/Signin";
+import Signup from "../authentication/Signup";
 
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
@@ -57,6 +59,16 @@ const RootNavigator = () => {
           name="CartList"
           component={CartList}
           options={{ title: "Cart" }}
+        />
+        <Screen
+          name="Signin"
+          component={Signin}
+          options={{ headerShown: false }}
+        />
+        <Screen
+          name="Signup"
+          component={Signup}
+          options={{ headerShown: false }}
         />
       </Navigator>
     </NavigationContainer>

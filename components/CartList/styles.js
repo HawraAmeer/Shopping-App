@@ -14,17 +14,3 @@ export const TrashIcon = styled(Icon)`
   margin-top: 5px;
   font-size: 32px;
 `;
-
-export const CheckoutButton = styled.TouchableOpacity`
-  align-self: stretch;
-  align-items: center;
-  padding: 20px;
-  background-color: #f23f75;
-  margin-top: 30px;
-`;
-
-export const CheckoutButtonText = styled.Text`
-  color: #ffff99;
-  font-weight: bold;
-  font-size: 18px;
-`;

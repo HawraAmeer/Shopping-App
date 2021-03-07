@@ -1,13 +1,11 @@
 import { List } from "native-base";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { checkout } from "../../store/actions/cartActions";
+import { useSelector } from "react-redux";
+import CheckoutButton from "../buttons/CheckoutButton";
 import Loading from "../Loading";
 import CartItem from "./CartItem";
-import { CheckoutButton, CheckoutButtonText } from "./styles";
 
 const CartList = ({ navigation }) => {
-  const dispatch = useDispatch();
   const items = useSelector((state) => state.cartReducer.items);
   const productReducer = useSelector((state) => state.productReducer);
 
@@ -20,20 +18,10 @@ const CartList = ({ navigation }) => {
     }))
     .map((item) => <CartItem key={item.id} item={item} />);
 
-  const handleCheckout = () => {
-    dispatch(checkout());
-    alert("Thank You!");
-    navigation.navigate("Home");
-  };
-
   return (
     <>
       <List>{cartList}</List>
-      {cartList.length !== 0 && (
-        <CheckoutButton onPress={() => handleCheckout()}>
-          <CheckoutButtonText>Checkout</CheckoutButtonText>
-        </CheckoutButton>
-      )}
+      {cartList.length !== 0 && <CheckoutButton navigation={navigation} />}
     </>
   );
 };

@@ -19,3 +19,17 @@ export const CartTextStyled = styled.Text`
   color: #f23f75;
   font-size: 20px;
 `;
+
+export const CheckoutButtonStyled = styled.TouchableOpacity`
+  align-self: stretch;
+  align-items: center;
+  padding: 20px;
+  background-color: #f23f75;
+  margin-top: 30px;
+`;
+
+export const CheckoutButtonText = styled.Text`
+  color: #ffff99;
+  font-weight: bold;
+  font-size: 18px;
+`;
