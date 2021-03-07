@@ -33,7 +33,7 @@ export const signin = (userData, navigation) => async (dispatch) => {
   }
 };
 
-export const signout = async () => {
+export const signout = () => {
   AsyncStorage.removeItem("token");
   delete instance.defaults.headers.common.Authorization;
   return {
