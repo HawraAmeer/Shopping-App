@@ -13,7 +13,7 @@ const CartList = ({ navigation }) => {
 
   const cartList = items
     .map((item) => ({
-      ...productReducer.products.find((product) => item.id === product.id),
+      ...productReducer.products.find((product) => item.donutId === product.id),
       quantity: item.quantity,
     }))
     .map((item) => <CartItem key={item.id} item={item} />);
@@ -21,7 +21,9 @@ const CartList = ({ navigation }) => {
   return (
     <>
       <List>{cartList}</List>
-      {cartList.length !== 0 && <CheckoutButton navigation={navigation} />}
+      {cartList.length !== 0 && (
+        <CheckoutButton items={items} navigation={navigation} />
+      )}
     </>
   );
 };

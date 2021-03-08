@@ -1,4 +1,5 @@
 import * as types from "./types";
+import instance from "./instance";
 
 export const addItem = (newItem) => {
   return {
@@ -14,6 +15,13 @@ export const deleteItem = (itemId) => {
   };
 };
 
-export const checkout = () => ({
-  type: types.CHECKOUT,
-});
+export const checkout = (items) => async (dispatch) => {
+  try {
+    await instance.post("/checkout", items);
+    dispatch({
+      type: types.CHECKOUT,
+    });
+  } catch (error) {
+    console.log("ERROR: ", error);
+  }
+};

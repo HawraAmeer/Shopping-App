@@ -3,11 +3,11 @@ import * as types from "../actions/types";
 const initialState = {
   items: [
     {
-      id: 2,
+      donutId: 2,
       quantity: 1,
     },
     {
-      id: 3,
+      donutId: 3,
       quantity: 2,
     },
   ],
